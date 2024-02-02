@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block detail_post %}
+    <link rel="stylesheet" href="{% static 'autoblog/css/detail_post.css' %}">
+
+    <main class="post__main">
+        <section class="post__section">
+            <div class="post__wrapper">
+                <div class="post__author">
+                    <div class="author">
+                        <img class="author__image" src="{{ posts.author.photo.url }}">
+                        <span class="author__username">{{ posts.author.username }}</span>
+                    </div>
+                    <div class="post__date">
+                        <span>{{ posts.created_at|date }}</span>
+                    </div>
+                </div>
+                <div class="post">
+                    <img class="post__image" src="{{ posts.image.url }}">
+                </div>
+
+                <div class="post__title">
+                    <h1>{{ posts.title }}</h1>
+                </div>
+                <div class="post__description">
+                    <p>{{ posts.description }}</p>
+                </div>
+                <div class="post__status">
+                    <a class="sum__comments" href="#comments">{{ count_comment }} COMMENTS</a>
+                    <a class="post__category" href="{{ posts.category.get_absolute_url }}">{{ posts.category.name }}</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="post__comments" id="comments">
+            <form class="comments__form" method="POST">
+                {% csrf_token %}
+                <div class="create-comment">
+                    <div class="comment">
+                        {{ form.text }}
+                    </div>
+                    <div class="comment-btn">
+                        <button class="send-comment" type="submit">Send</button>
+                    </div>
+                </div>
+                <div class="comments-title">
+                    <h3 class="title">Comments</h3>
+                </div>
+                {% if comments %}
+                {% for comment in comments %}
+                <div class="comments">
+                    <div class="user-comment">
+                        <div class="author__photo">
+                            <img class="photo" src="{{ comment.user.photo.url }}">
+                        </div>
+                        <div class="comment-data">
+                            <div class="comment-author">
+                                {{ comment.user.username }}
+                            </div>
+                            <div class="comment-text">
+                                {% autoescape off %}
+                                    {{ comment.text|linebreaks }}
+                                {% endautoescape %}
+                            </div>
+                            <div class="comment-date">
+                                {{ comment.created_at }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                {% else %}
+                    <div class="no-comments">
+                        <p>No comments yet. Be the first to leave a comment!</p>
+                    </div>
+                {% endif %}
+            </form>
+        </section>
+    </main>
+
+    {% block footer %}
+    {% endblock %}
+{% endblock %}

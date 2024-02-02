@@ -1,0 +1,120 @@
+.authorization__main {
+    flex: 1 0 auto;
+}
+
+.authorization__section {
+    width: 100%;
+    height: calc(100vh - 70px);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.auth__form {
+    width: 1400px;
+    height: calc(100vh - 140px);
+    background-color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth__wrapper {
+    width: 400px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+
+}
+
+.auth__title {
+    text-transform: uppercase;
+}
+
+.auth__username {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.username__label {
+    font-size: 14px;
+}
+
+.username__input {
+    border: 1px solid rgba(0, 0, 0, .1);
+}
+
+.username__input:focus {
+    outline: none;
+}
+
+.auth__password {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    width: 100%;
+}
+
+.password__label {
+    font-size: 14px;
+}
+
+.password__input {
+    border: 1px solid rgba(0, 0, 0, .1);
+}
+
+.password__input:focus {
+    outline: none;
+}
+
+.auth__btn {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.auth__btn > button {
+    border: none;
+    background-color: #1e1e1e;
+    color: #FFF;
+    width: 185px;
+    text-transform: uppercase;
+    font-size: 16px;
+    transition: opacity .2s ease-in-out;
+    cursor: pointer;
+}
+
+.auth__btn > button:hover {
+    opacity: .8;
+}
+
+.password__recovery {
+    font-size: 14px;
+    margin-right: 40px;
+}
+
+.password__recovery:hover {
+    opacity: .7;
+}
+
+.auth__reg {
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.reg__link {
+    font-size: 14px;
+    color: #000;
+}
+
+.reg__link:hover {
+    opacity: .8;
+}

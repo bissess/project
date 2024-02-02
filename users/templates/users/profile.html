@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block profile %}
+    <link rel="stylesheet" href="{% static 'users/css/profile.css' %}">
+
+    <main class="profile__main">
+        <section class="profile__section">
+            <form class="profile__form" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="user-data-wrapper">
+                    <div class="account-data-wrapper">
+                        <div class="profile__photo">
+                            <div class="photo">
+                                <img src="{{ user.photo.url }}" alt="User Photo">
+                                <input type="file" name="{{ form.photo.name }}" class="photo-input">
+                            </div>
+                        </div>
+                        <div class="profile-data">
+                            <div class="profile-first-last-name">
+                                <div class="first-name">
+                                    <label class="first-name-label">{{ form.first_name.label_tag }}</label>
+                                    {{ form.first_name }}
+                                </div>
+                                <div class="last-name">
+                                    <label class="last-name-label">{{ form.last_name.label_tag }}</label>
+                                    {{ form.last_name }}
+                                </div>
+                            </div>
+                            <div class="profile-username-gender">
+                                <div class="username">
+                                    <label class="username-label">{{ form.username.label_tag }}</label>
+                                    {{ form.username }}
+                                </div>
+                                <div class="gender">
+                                    <label class="gender-label">{{ form.gender.label_tag }}</label>
+                                    {{ form.gender }}
+                                </div>
+                            </div>
+                            <div class="profile-birthday-joined">
+                                <div class="birthday">
+                                    <div class="birthday-label">
+                                        <label class="birthday-label">{{ form.date_birthday.label_tag }}</label>
+                                    </div>
+                                    <div class="birthday-select">
+                                        {{ form.date_birthday }}
+                                    </div>
+                                </div>
+                                <div class="joined">
+                                    <label class="joined-label">{{ form.date_joined.label_tag }}</label>
+                                    {{ form.date_joined }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="account-statistic-wrapper">
+                        <div class="post__count">
+                            <h2>{{ post_count }}</h2>
+                            <p>Posts</p>
+                        </div>
+                        <div class="comment__count">
+                            <h2>{{ comment_count }}</h2>
+                            <p>Comments</p>
+                        </div>
+                        <div class="like__count">
+                            <h2>9</h2>
+                            <p>Likes</p>
+                        </div>
+                    </div>
+                    <nav class="account-nav">
+                        <ul class="account-list">
+                            <li class="nav__profile__link"><a class="nav__profile__item" href="{{ user.get_absolute_url }}">Profile</a></li>
+                            <li class="nav__safety__link"><a class="nav__safety__item" href="{% url 'users:safety' %}">Safety</a></li>
+                        </ul>
+                        <div class="confirm-data">
+                            <button type="submit">SAVE</button>
+                        </div>
+                    </nav>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    {% block footer %}
+    {% endblock %}
+{% endblock %}

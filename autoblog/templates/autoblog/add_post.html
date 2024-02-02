@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block add_post %}
+    <link rel="stylesheet" href="{% static 'autoblog/css/add_post.css' %}">
+
+    <main class="add__post__main">
+        <section class="add__post__section">
+            <form class="add__post__form" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="add__post__wrapper">
+                    <div class="add__post__text">
+                        <div class="title__and__category">
+                            <div class="title">
+                                <label class="title__label">{{ form.title.label_tag }}</label>
+                                {{ form.title }}
+                            </div>
+                            <div class="category">
+                                <label class="category__label">{{ form.category.label_tag }}</label>
+                                {{ form.category }}
+                            </div>
+                        </div>
+                        <div class="description">
+                            <label class="description__label">{{ form.description.label_tag }}</label>
+                            {{ form.description }}
+                        </div>
+                        <div class="create-post-container">
+                            <button type="submit" class="create-post-btn">Create</button>
+                        </div>
+                    </div>
+
+                    <div class="add__post__image">
+                        <div class="image" id="image-container">
+                            {{ form.image }}
+                            <img id="selected-image" class="selected-image" src="#" alt="Selected Image">
+                        </div>
+                        <div class="button-container">
+                            <button id="delete-image-btn" class="delete-image-btn" onclick="deleteSelectedImage()">Clear</button>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script src="{% static 'autoblog/js/upload-image.js' %}"></script>
+
+    {% block footer %}
+    {% endblock %}
+
+{% endblock %}

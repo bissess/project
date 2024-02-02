@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block safety %}
+    <link rel="stylesheet" href="{% static 'users/css/safety.css' %}">
+
+    <main>
+        <form class="safety-form" method="POST">
+            {% csrf_token %}
+            <div class="safety-wrapper">
+                <div class="safety-password">
+                    <div class="old-psw">
+                        <label>{{ form.old_password.label_tag }}</label>
+                        {{ form.old_password }}
+                        {% for error in form.old_password.errors %}
+                            <p class="error">{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                    <div class="new-psw">
+                        <label>{{ form.new_password1.label_tag }}</label>
+                        {{ form.new_password1 }}
+                        {% for error in form.new_password1.errors %}
+                            <p class="error">{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                    <div class="conf-new-psw">
+                        <label>{{ form.new_password2.label_tag }}</label>
+                        {{ form.new_password2 }}
+                        {% for error in form.new_password2.errors %}
+                            <p class="error">{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="safety-email">
+                    <label>{{ form.email.label_tag }}</label>
+                    {{ form.email }}
+                </div>
+            </div>
+            <nav class="profile-nav">
+                <ul class="profile-nav-list">
+                    <li class="profile-link"><a class="profile-link-item" href="{{ user.get_absolute_url }}">Profile</a></li>
+                    <li class="safety-link"><a class="safety-link-item" href="{% url 'users:safety' %}">Safety</a></li>
+                </ul>
+
+                <div class="safety-button">
+                    <button type="submit">Save</button>
+                </div>
+            </nav>
+        </form>
+    </main>
+
+    {% block footer %}
+    {% endblock %}
+{% endblock %}

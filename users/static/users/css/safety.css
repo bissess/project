@@ -1,0 +1,121 @@
+.safety-form {
+    width: 100%;
+    height: calc(100vh - 70px);
+}
+
+.safety-wrapper {
+    width: 1400px;
+    height: calc(100vh - 140px);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin: 0% auto;
+}
+
+.safety-password {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.old-psw,
+.new-psw,
+.conf-new-psw {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+}
+
+.old-psw > label,
+.new-psw > label,
+.conf-new-psw > label {
+    text-transform: uppercase;
+    font-size: 13px;
+    color: rgba(0, 0, 0, 50%);
+}
+
+.old_password,
+.new_password,
+.confirm_password {
+    border: 1px solid rgba(0, 0, 0, .1);
+
+}
+
+.old_password:focus,
+.new_password:focus,
+.confirm_password:focus {
+    outline: none;
+}
+
+
+.safety-email {
+    width: 350px;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.safety-email > label {
+    text-transform: uppercase;
+    font-size: 13px;
+    color: rgba(0, 0, 0, 50%);
+}
+
+.email {
+    border: 1px solid rgba(0, 0, 0, .1);
+}
+
+.email:focus {
+    outline: none;
+}
+
+.profile-nav {
+    width: 1400px;
+    height: 70px;
+    border-top: 1px solid rgba(0, 0, 0, .1);
+    margin: 0% auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-nav-list {
+    display: flex;
+}
+
+.profile-link-item,
+.safety-link-item {
+    color: #000;
+    text-transform: uppercase;
+    font-size: 14px;
+    transition: .3s ease-in-out;
+}
+
+.profile-link-item:hover {
+    opacity: .7;
+}
+
+.safety-link-item:hover {
+    opacity: .7;
+}
+
+.safety-link {
+    margin-left: 15px;
+}
+
+.safety-button > button {
+    width: 250px;
+    border: none;
+    background-color: #131313;
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.safety-button > button:hover {
+    opacity: .7;
+}

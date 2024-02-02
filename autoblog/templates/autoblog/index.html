@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block blog_home %}
+    <link rel="stylesheet" href="{% static 'autoblog/css/blog.css' %}">
+
+    <main class="mainblog">
+        <section class="welcome__section">
+            <div class="slider-container">
+                <div class="slider">
+                    <div class="slide" style="background-image: url('/static/autoblog/images/gallery-1.jpg');">
+                    </div>
+                    <div class="slide" style="background-image: url('/static/autoblog/images/gallery-2.jpg');">
+                    </div>
+                    <div class="slide" style="background-image: url('/static/autoblog/images/gallery-3.jpg');">
+                    </div>
+                    <div class="slide" style="background-image: url('/static/autoblog/images/gallery-4.jpg');">
+                    </div>
+                </div>
+                <button class="prev" onclick="prevSlide()">&lt;</button>
+                <button class="next" onclick="nextSlide()">&gt;</button>
+            </div>
+        </section>
+
+        <section class="posts__section">
+            <nav class="categories__nav">
+                <ul class="categories__list">
+                    <li class="category__link"><a class="category__item" href="{% url 'autoblog:main' %}">All Posts</a></li>
+                    {% for category in categories %}
+                        <li class="category__link">
+                            <a class="category__item" href="{{ category.get_absolute_url }}">{{ category.name }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+
+                <ul class="posts__managing">
+                    <li class="add-post-link"><a class="add-post-item" href="{% url 'autoblog:add_post' %}">Add Post</a></li>
+                    <li class="user-post-link"><a class="user-post-item" href="{% url 'autoblog:my_posts' %}">My posts</a></li>
+                </ul>
+            </nav>
+            {% for post in posts %}
+                <div class="posts__container">
+                    <div class="post__image">
+                        <img src="{{ post.image.url }}">
+                    </div>
+
+                    <div class="post__content">
+                        <div class="user">
+                            <div class="user__image">
+                                <img src="{{ post.author.photo.url }}">
+                            </div>
+                            <div class="user__info">
+                                <p class="username">{{ post.author.username }}</p>
+                            </div>
+                        </div>
+
+                        <div class="post__text">
+                            <h2 class="post__title">{{ post.title }}</h2>
+                            <p class="post__description">{{ post.description|truncatewords:40 }}</p>
+                        </div>
+
+                        <div class="post__status">
+                            <div class="post__btn">
+                                <a class="post__link" href="{{ post.get_absolute_url }}">Read More</a>
+                            </div>
+                            <div class="post__date">
+                                <p class="post__created">{{ post.created_at|date }}</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            {% endfor %}
+
+            {% if is_paginated %}
+                <div class="post__pagination">
+                    <div class="previous__page">
+                        {% if page_obj.has_previous %}
+                            <a href="?page={{ page_obj.previous_page_number }}"><i class="fa-solid fa-arrow-right fa-flip-horizontal fa-xl" style="color: #000000;"></i></a>
+                        {% else %}
+                            <a><i class="fa-solid fa-arrow-right fa-flip-horizontal fa-xl" style="color: rgba(0, 0, 0, 50%);"></i></a>
+                        {% endif %}
+                    </div>
+
+                    <div class="current__page">
+                        {{ page_obj.number }} OF {{ page_obj.paginator.num_pages }}
+                    </div>
+
+                    <div class="next__page">
+                        {% if page_obj.has_next %}
+                            <a href="?page={{ page_obj.next_page_number }}" style="color: #000;"><i class="fa-solid fa-arrow-right fa-xl" style="color: #000000;"></i></a>
+                        {% else %}
+                            <a><i class="fa-solid fa-arrow-right fa-xl" style="color: rgba(0, 0, 0, 50%);"></i></a>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endif %}
+
+        </section>
+    </main>
+
+    {% block footer %}
+<!--        Отключенный footer-->
+    {% endblock %}
+
+    <script src="{% static 'autoblog/js/slider.js' %}"></script>
+
+{% endblock %}

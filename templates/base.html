@@ -1,0 +1,136 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'autoclub/css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'autoclub/css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'autoclub/css/footer.css' %}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+
+    <link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
+
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <header>
+        <div class="header__container">
+            <ul class="header__menu">
+                {% for m in header_menu %}
+                    <li class="menu__link"><a class="menu__item" href="{% url m.url_name %}">{{ m.title }}</a></li>
+                {% endfor %}
+            </ul>
+
+            <div class="header__authenticate">
+                {% if user.is_authenticated %}
+                    <a class="profile__link" href="{{ user.get_absolute_url }}"><img class="profile__image" src="{{ user.photo.url }}"></a>
+                    <a class="profile__logout" href="{% url 'users:logout' %}">Logout</a>
+                {% else %}
+                    <a class="user__auth" href="{% url 'users:sign_in' %}">Sign in</a>
+                    <a class="user__reg" href="{% url 'users:sign_up' %}">Sign up</a>
+                {% endif %}
+            </div>
+        </div>
+    </header>
+
+    <main>
+        {% block home %}
+        {% endblock %}
+
+        {% block blog_home %}
+        {% endblock %}
+
+        {% block authorization %}
+        {% endblock %}
+
+        {% block registration %}
+        {% endblock %}
+
+        {% block detail_post %}
+        {% endblock %}
+
+        {% block add_post %}
+        {% endblock %}
+
+        {% block profile %}
+        {% endblock %}
+
+        {% block safety %}
+        {% endblock %}
+
+        {% block password-reset %}
+        {% endblock %}
+
+        {% block password-reset-done %}
+        {% endblock %}
+
+        {% block password-reset-confirm %}
+        {% endblock %}
+
+        {% block password-reset-complete %}
+        {% endblock %}
+    </main>
+
+    {% block footer %}
+        <footer>
+            <div class="footer__wrapper">
+                <div class="footer__info">
+                    <div class="footer__email">
+                        <div class="email__image">
+                            <i class="fa-solid fa-envelope fa-2xl" style="color: #1e1e1e;"></i>
+                        </div>
+                        <div class="v-line">
+
+                        </div>
+                        <div class="email__text">
+                            <p>b1ssee@list.ru</p>
+                        </div>
+                    </div>
+
+                    <div class="footer__address">
+                        <div class="address__image">
+                            <i class="fa-solid fa-location-dot fa-2xl" style="color: #1e1e1e;"></i>
+                        </div>
+                        <div class="v-line">
+
+                        </div>
+                        <div class="address__text">
+                            <p>Aksu, Kazakhstan. <br> Pushkin Street - 99</p>
+                        </div>
+                    </div>
+
+                    <div class="footer__tel">
+                        <div class="tel__image">
+                            <i class="fa-solid fa-phone fa-2xl" style="color: #1e1e1e;"></i>
+                        </div>
+                        <div class="v-line">
+
+                        </div>
+                        <div class="tel__text">
+                            <p>+7-747-777-77-77</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </footer>
+    {% endblock %}
+</body>
+</html>
+
+
+
+{% block about %}
+{% endblock %}
+
+{% block callback %}
+{% endblock %}
+
+

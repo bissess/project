@@ -1,0 +1,261 @@
+.mainblog {
+    flex: 1 0 auto;
+
+}
+
+.welcome__section {
+    width: 100%;
+    height: calc(100vh - 70px);
+    display: flex;
+    justify-content: center;
+}
+
+.slider-container {
+    position: relative;
+    width: 1400px;
+    height: calc(100vh - 70px);
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    height: calc(100vh - 70px);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: grayscale(100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide__title {
+    font-size: 34px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 50%);
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    font-size: 68px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 50%);
+}
+
+
+
+.prev {
+    left: 10px;
+    transition: color .3s ease-in-out;
+}
+
+.prev:hover {
+    color: #FFF;
+}
+
+
+.next {
+    right: 10px;
+    transition: color .3s ease-in-out;
+}
+
+.next:hover {
+    color: #FFF;
+}
+
+
+.posts__section {
+    width: 100%;
+    height: 100%;
+}
+
+.categories__nav {
+    width: 1400px;
+    margin: 0% auto;
+    margin-bottom: 5px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.categories__list {
+    display: flex;
+}
+
+.category__link {
+    padding: 0px 15px;
+}
+
+.category__link.active {
+    background-color: yellow;
+}
+
+.category__link:first-child {
+    padding-left: 0px;
+}
+
+.category__item {
+    text-transform: uppercase;
+    color: #000;
+    font-size: 14px;
+    transition: opacity .2s ease-in-out;
+}
+
+.category__item:hover {
+    opacity: .7;
+}
+
+.posts__managing {
+    display: flex;
+}
+
+.add-post-link {
+    margin-right: 15px;
+}
+
+.add-post-item {
+    text-transform: uppercase;
+    color: #000;
+    font-size: 14px;
+    transition: opacity .2s ease-in-out;
+}
+
+.add-post-item:hover {
+    opacity: .7;
+}
+
+.user-post-item {
+    text-transform: uppercase;
+    color: #000;
+    font-size: 14px;
+    transition: opacity .2s ease-in-out;
+}
+
+.user-post-item:hover {
+    opacity: .7;
+}
+
+.posts__container {
+    width: 1400px;
+    height: 400px;
+    display: flex;
+    margin: 30px auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.post__image {
+    width: 50%;
+    height: 100%;
+}
+
+.post__image > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.post__content {
+    width: 50%;
+    height: 100%;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.user {
+    width: 95%;
+    height: 100px;
+    margin: 0% auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+.user__image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.user__image > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.user__info {
+    margin-left: 10px;
+}
+
+.user__info > .username, .post__created {
+    font-size: 14px;
+}
+
+.post__text {
+    width: 95%;
+    height: 200px;
+    margin: 0% auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.post__description {
+    margin-top: 10px;
+}
+
+.post__status {
+    width: 95%;
+    height: 50px;
+    margin: 0% auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid rgba(0, 0, 0, .1);
+}
+
+.post__link {
+    background: #000;
+    padding: 7px 15px;
+    color: #FFF;
+}
+
+.post__created {
+    color: rgba(0, 0, 0, 50%);
+}
+
+.post__pagination {
+    width: 1400px;
+    margin: 35px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.previous__page > a {
+    font-size: 18px;
+}
+
+.next__page > a {
+    font-size: 18px;
+}

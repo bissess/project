@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block home %}
+    <link rel="stylesheet" href="{% static 'autoclub/css/index.css' %}">
+
+    <main class="homepage__main">
+        <section class="welcome__section">
+            <div class="welcome__container">
+                <div class="welcome__content">
+                    <h1 class="welcome__title"><b>BMW</b> - Sheer Driving Pleasure</h1>
+                    <a class="welcome__btn" href="#">Join</a>
+                </div>
+            </div>
+        </section>
+        <section class="services__section">
+            <div class="services-wrapper">
+                <div class="services-title">
+                    <h2>Our Services</h2>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="160" height="16" viewBox="0 0 227 16" fill="none">
+                        <path d="M226.707 8.70711C227.098 8.31658 227.098 7.68342 226.707 7.29289L220.343 0.928932C219.953 0.538408 219.319 0.538408 218.929 0.928932C218.538 1.31946 218.538 1.95262 218.929 2.34315L224.586 8L218.929 13.6569C218.538 14.0474 218.538 14.6805 218.929 15.0711C219.319 15.4616 219.953 15.4616 220.343 15.0711L226.707 8.70711ZM0 9H226V7H0V9Z" fill="black"/>
+                    </svg>
+                </div>
+                <div class="services-list">
+                    <div class="services-list-wrapper">
+                        <div class="services-list-container">
+                            <div class="services-list-content">
+                                <h3 class="services-list-title">Заголовок</h3>
+                                <p>Этот текст заглушка. Если у тебя имеется потребность что-то написать, залезь в шаблон,
+                                и поставь то, что тебе по вкусу.</p>
+                            </div>
+                            <div class="services-list-content">
+                                <h3 class="services-list-title">Заголовок</h3>
+                                <p>Этот текст заглушка. Если у тебя имеется потребность что-то написать, залезь в шаблон,
+                                и поставь то, что тебе по вкусу.</p>
+                            </div>
+                        </div>
+                        <div class="services-list-container">
+                            <div class="services-list-content">
+                                <h3 class="services-list-title">Заголовок</h3>
+                                <p>Этот текст заглушка. Если у тебя имеется потребность что-то написать, залезь в шаблон,
+                                и поставь то, что тебе по вкусу.</p>
+                            </div>
+                            <div class="services-list-content">
+                                <h3 class="services-list-title">Заголовок</h3>
+                                <p>Этот текст заглушка. Если у тебя имеется потребность что-то написать, залезь в шаблон,
+                                и поставь то, что тебе по вкусу.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="models__section">
+            <div class="models__wrapper">
+                <div class="models__title__container">
+                    <h2>popular models</h2>
+                </div>
+                <div class="models__content__container">
+                    <div class="m8__model">
+                        <img src="{% static 'autoclub/images/m8.png' %}" class="m8__image">
+                        <h3 class="m8__title">M8 COMPETITION</h3>
+                        <p class="m8__descr">Horse Power - 591</p>
+                        <p class="m8__descr">Newton Meter - 750</p>
+                    </div>
+                    <div class="m5__model">
+                        <img src="{% static 'autoclub/images/m5.png' %}" class="m5__image">
+                        <h2 class="m5__title">M5 COMPETITION</h2>
+                        <p class="m5__descr">Horse Power - 625</p>
+                        <p class="m5__descr">Newton Meter - 750</p>
+                    </div>
+                    <div class="m4__model">
+                        <img src="{% static 'autoclub/images/m4.png' %}" class="m4__image">
+                        <h3 class="m4__title">M4 COMPETITION</h3>
+                        <p class="m4__descr">Horse Power - 510</p>
+                        <p class="m4__descr">Newton Meter - 650</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="why__us__section">
+            <div class="why-us-wrapper">
+                <div class="why-us-title">
+                    <h2>WHY US ?</h2>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="110" height="16" viewBox="0 0 160 16" fill="none">
+                        <path d="M0.292893 7.29289C-0.0976311 7.68342 -0.0976311 8.31658 0.292893 8.70711L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41421 8L8.07107 2.34315C8.46159 1.95262 8.46159 1.31946 8.07107 0.928932C7.68054 0.538408 7.04738 0.538408 6.65685 0.928932L0.292893 7.29289ZM1 9H161V7H1V9Z" fill="black"/>
+                    </svg>
+                </div>
+                <div class="why-us-list">
+                    <div class="why-us-list-wrapper">
+                        <div class="why-us-list-container">
+                            <div class="why-us-list-content">
+                                <h3 class="why-us-list-title">Заголовок</h3>
+                                <p>Этот текст заглушка. Если у тебя имеется потребность что-то написать, залезь в шаблон,
+                                и поставь то, что тебе по вкусу.</p>
+                            </div>
+                            <div class="why-us-list-content">
+                                <h3 class="why-us-list-title">Заголовок</h3>
+                                <p>Этот текст заглушка. Если у тебя имеется потребность что-то написать, залезь в шаблон,
+                                и поставь то, что тебе по вкусу.</p>
+                            </div>
+                        </div>
+                        <div class="why-us-list-container">
+                            <div class="why-us-list-content">
+                                <h3 class="why-us-list-title">Заголовок</h3>
+                                <p>Этот текст заглушка. Если у тебя имеется потребность что-то написать, залезь в шаблон,
+                                и поставь то, что тебе по вкусу.</p>
+                            </div>
+                            <div class="why-us-list-content">
+                                <h3 class="why-us-list-title">Заголовок</h3>
+                                <p>Этот текст заглушка. Если у тебя имеется потребность что-то написать, залезь в шаблон,
+                                и поставь то, что тебе по вкусу.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="gallery__slider__section">
+            <div class="slider-container">
+                <div class="slider">
+                    <div class="slide" style="background-image: url('/static/autoclub/images/gallery-1.jpg');"></div>
+                    <div class="slide" style="background-image: url('/static/autoclub/images/gallery-2.jpg');"></div>
+                    <div class="slide" style="background-image: url('/static/autoclub/images/gallery-3.jpg');"></div>
+                    <div class="slide" style="background-image: url('/static/autoclub/images/gallery-4.jpg');"></div>
+                    <div class="slide" style="background-image: url('/static/autoclub/images/gallery-5.jpg');"></div>
+                </div>
+                <button class="prev" onclick="prevSlide()">&lt;</button>
+                <button class="next" onclick="nextSlide()">&gt;</button>
+            </div>
+        </section>
+
+    <script defer src="{% static 'autoclub/js/script.js' %}"></script>
+    </main>
+
+{% endblock %}

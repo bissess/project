@@ -1,0 +1,177 @@
+.add__post__main {
+    flex: 1 0 auto;
+}
+
+.add__post__section {
+    width: 100%;
+    height: calc(100vh - 70px);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.add__post__wrapper {
+    width: 1400px;
+    height: calc(100vh - 140px);
+    background-color: #FFF;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.add__post__text {
+    width: 45%;
+    height: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title__and__category {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.title {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+}
+
+.title__label {
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.post__title {
+    height: 30px;
+    border: 1px solid rgba(0, 0, 0, .2);
+}
+
+.post__title:focus {
+    outline: none;
+}
+
+.category {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+}
+
+.category__label {
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.post__category {
+    height: 30px;
+    border: 1px solid rgba(0, 0, 0, .2);
+}
+
+.post__category:focus {
+    outline: none;
+}
+
+.description {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.description__label {
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.post__description {
+    border: 1px solid rgba(0, 0, 0, .2);
+}
+
+.post__description:focus {
+    outline: none;
+}
+
+.create-post-container {
+    width: 100%;
+}
+
+.create-post-btn {
+    width: 100%;
+    border: none;
+    background-color: #1E1E1E;
+    color: #FFF;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.create-post-btn:hover {
+    opacity: .7;
+}
+
+.add__post__image {
+    width: 45%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.image {
+    position: relative;
+    width: 100%;
+    height: 90%;
+    background-image: url('/static/autoblog/images/upload-def-image.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, .2);
+
+}
+
+.image:hover {
+    opacity: .7;
+}
+
+.post__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+
+.selected-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}
+
+.button-container {
+    width: 100%;
+}
+
+.delete-image-btn {
+    width: 100%;
+    border: none;
+    background-color: #1e1e1e;
+    color: #FFF;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.delete-image-btn:hover {
+    opacity: .7;
+}

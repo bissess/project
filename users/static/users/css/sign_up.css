@@ -1,0 +1,199 @@
+.registration__main {
+    flex: 1 0 auto;
+}
+
+.registration__section {
+    width: 100%;
+    height: calc(100vh - 70px);
+    display: flex;
+    justify-content: center;
+    background-color: #F5F5F5;
+}
+
+.registration__form {
+    width: 1400px;
+    height: calc(100vh - 140px);
+    background-color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.reg__wrapper {
+    width: 700px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.reg__title {
+    width: 100%;
+}
+
+.reg__title > h1 {
+    text-transform: uppercase;
+}
+
+
+
+
+.reg__initials {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+.first-name,
+.last-name {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+}
+
+.reg__first-name__input {
+    border: 1px solid rgba(0, 0, 0, .1);
+}
+
+.reg__first-name__input:focus {
+    outline: none;
+}
+
+.reg__last-name__input {
+    border: 1px solid rgba(0, 0, 0, .1);
+}
+
+.reg__last-name__input:focus {
+    outline: none;
+}
+
+
+
+
+
+.reg__username__email {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+.username,
+.email {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+}
+
+.reg__username__input,
+.reg__email__input {
+    border: 1px solid rgba(0, 0, 0, .1);
+}
+
+.reg__username__input:focus,
+.reg__email__input:focus {
+    outline: none;
+}
+
+
+
+
+
+.reg__password1__password2 {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+.password1,
+.password2 {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+}
+
+.reg__password__input,
+.reg__repeat-password__input {
+    border: 1px solid rgba(0, 0, 0, .1);
+}
+
+.reg__password__input:focus,
+.reg__repeat-password__input:focus {
+    outline: none;
+}
+
+.reg__gender__birth {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+.gender {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+}
+
+.gender__input {
+    height: 27.6px;
+    border: 1px solid rgba(0, 0, 0, .1);
+}
+
+.gender__input:focus {
+    outline: none;
+}
+
+.birthday {
+    width: 45%;
+}
+
+.birth__input {
+    width: 30%;
+    border: 1px solid rgba(0, 0, 0, .1);
+    height: 27.6px;
+}
+
+.birth__input:focus {
+    outline: none;
+}
+
+select#id_date_birthday_month.birth__input {
+    margin-left: 15px;
+}
+
+select#id_date_birthday_year.birth__input {
+    margin-left: 15px;
+}
+
+.reg__finish {
+    width: 100%;
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.reg__btn {
+    width: 45%;
+    border: none;
+    background-color: #000;
+    color: #FFF;
+    text-transform: uppercase;
+}
+
+.reg__link {
+    width: 45%;
+    text-align: center;
+    color: #000;
+}
+
+.reg__link:hover {
+    opacity: .7;
+}
+
+.error {
+    color: red;
+}

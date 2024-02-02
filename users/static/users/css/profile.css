@@ -1,0 +1,362 @@
+.profile__section {
+    width: 100%;
+    height: calc(100vh - 70px);
+    background-color: #F5F5F5;
+}
+
+.profile__form {
+    width: 1400px;
+    height: calc(100vh - 70px);
+    margin: 0% auto;
+}
+
+.user-data-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.account-data-wrapper {
+    width: 100%;
+    height: 50%;
+    max-height: 50%;
+    border-top: 1px solid rgba(0, 0, 0, .1);
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+.profile__photo {
+    width: 30%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.photo {
+    width: 70%;
+    height: 90%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.photo > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.photo-input {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.photo:hover {
+    opacity: .7;
+}
+
+.profile-data {
+    width: calc(100% - 33.33%);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.profile-first-last-name {
+    width: 100%;
+    height: 33.33%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.first-name {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.first-name-label {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 50%);
+}
+
+.first-name-input {
+    border: 1px solid rgba(0, 0, 0, .1);
+    padding-left: 5px;
+    height: 35px;
+}
+
+.first-name-input:focus {
+    outline: none;
+}
+
+.last-name {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.last-name-label {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 50%);
+
+}
+
+.last-name-input {
+    border: 1px solid rgba(0, 0, 0, .1);
+    padding-left: 5px;
+    height: 35px;
+}
+
+.last-name-input:focus {
+    outline: none;
+}
+
+
+.profile-username-gender {
+    width: 100%;
+    height: 33.33%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.username {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.username-label {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 50%);
+}
+
+.username-input {
+    border: 1px solid rgba(0, 0, 0, .1);
+    padding-left: 5px;
+    height: 35px;
+}
+
+.username-input:focus {
+    outline: none;
+}
+
+.gender {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.gender-label {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 50%);
+}
+
+.gender-input {
+    height: 29.2px;
+    border: 1px solid rgba(0, 0, 0, .1);
+    padding-left: 5px;
+    height: 35px;
+}
+
+.gender-input:focus {
+    outline: none;
+}
+
+.profile-birthday-joined {
+    width: 100%;
+    height: 33.33%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.birthday {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.birthday-label {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 50%);
+}
+
+.birthday-select {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 29.2px;
+}
+
+.birthday-input {
+    height: 35px;
+}
+
+.birthday-input:focus {
+    outline: none;
+}
+
+select#id_date_birthday_day.birthday-input {
+    width: 32%;
+    border: 1px solid rgba(0, 0, 0, .1);
+
+}
+
+select#id_date_birthday_month.birthday-input {
+    width: 32%;
+    border: 1px solid rgba(0, 0, 0, .1);
+
+}
+
+select#id_date_birthday_year.birthday-input {
+    width: 32%;
+    border: 1px solid rgba(0, 0, 0, .1);
+
+}
+
+.joined {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.joined-label {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 50%);
+}
+
+.joined-input {
+    border: 1px solid rgba(0, 0, 0, .1);
+    padding-left: 5px;
+    height: 35px;
+}
+
+.joined-input:focus {
+    outline: none;
+}
+
+
+.account-statistic-wrapper {
+    width: 100%;
+    height: 50%;
+    border-top: 0.5px solid rgba(0, 0, 0, .1);
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.post__count {
+    text-align: center;
+}
+
+.post__count > h2 {
+    font-size: 68px;
+}
+
+.post__count > p {
+    font-size: 18px;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 50%);
+
+}
+
+.comment__count {
+    text-align: center;
+}
+
+.comment__count > h2 {
+    font-size: 68px;
+}
+
+.comment__count > p {
+    font-size: 18px;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 50%);
+
+}
+
+.like__count {
+    text-align: center;
+}
+
+.like__count > h2 {
+    font-size: 68px;
+}
+
+.like__count > p {
+    font-size: 18px;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 50%);
+
+}
+
+.account-nav {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.account-list {
+    display: flex;
+}
+
+.nav__safety__link {
+    margin-left: 15px;
+}
+
+.nav__profile__item,
+.nav__safety__item {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #000;
+}
+
+.nav__profile__item:hover {
+    opacity: .7;
+}
+
+.nav__safety__item:hover {
+    opacity: .7;
+}
+
+.confirm-data > button {
+    width: 250px;
+    border: none;
+    background-color: #131313;
+    color: #FFF;
+    cursor: pointer;
+}
+
+.confirm-data > button:hover {
+    opacity: .7;
+}

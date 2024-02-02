@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block authorization %}
+    <link rel="stylesheet" href="{% static 'users/css/sign_in.css' %}">
+
+    <main class="authorization__main">
+        <section class="authorization__section">
+            <form class="auth__form" method="POST">
+                {% csrf_token %}
+                <div class="auth__wrapper">
+                    <div class="auth__title">
+                        <h1>Authorization</h1>
+                    </div>
+                    <div class="auth__username">
+                        <label class="username__label">{{ form.username.label_tag }}</label>
+                        {{ form.username }}
+                        {% for error in form.username.errors %}
+                            <p class="error">{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                    <div class="auth__password">
+                        <label class="password__label">{{ form.password.label_tag }}</label>
+                        {{ form.password }}
+                        {% for error in form.password.errors %}
+                            <p class="error">{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                    <div class="auth__btn">
+                        <button type="submit">Sign In</button>
+                        <a class="password__recovery" href="{% url 'users:password-reset' %}">Forgot Password?</a>
+                    </div>
+                    <div class="auth__reg">
+                        <a class="reg__link" href="{% url 'users:sign_up' %}">I don't have an account</a>
+                    </div>
+                </div>
+
+            </form>
+        </section>
+
+        {% block footer %}
+            <!--    Отключенный footer    -->
+        {% endblock %}
+
+    </main>
+{% endblock %}

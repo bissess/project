@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block registration %}
+    <link rel="stylesheet" href="{% static 'users/css/sign_up.css' %}">
+
+    <main class="registration__main">
+        <section class="registration__section">
+            <form class="registration__form" method="POST">
+                {% csrf_token %}
+                <div class="reg__wrapper">
+
+                    <div class="reg__title">
+                        <h1>Registration</h1>
+                    </div>
+
+                    <div class="reg__initials">
+                        <div class="first-name">
+                            <label class="first__name__label">{{ form.first_name.label_tag }}</label>
+                            {{ form.first_name }}
+                        </div>
+                        <div class="last-name">
+                            <label class="last__name__label">{{ form.last_name.label_tag }}</label>
+                            {{ form.last_name }}
+                        </div>
+                    </div>
+
+                    <div class="reg__username__email">
+                        <div class="username">
+                            <label class="username__label">{{ form.username.label_tag }}</label>
+                            {{ form.username }}
+                            {% for error in form.username.errors %}
+                                <p class="error">{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                        <div class="email">
+                            <label class="email__label">{{ form.email.label_tag }}</label>
+                            {{ form.email }}
+                            {% for error in form.email.errors %}
+                                <p class="error">{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <div class="reg__password1__password2">
+                        <div class="password1">
+                            <label>{{ form.password1.label_tag }}</label>
+                            {{ form.password1 }}
+                            {% for error in form.password1.errors %}
+                                <p class="error">{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                        <div class="password2">
+                            <label>{{ form.password2.label_tag }}</label>
+                            {{ form.password2 }}
+                            {% for error in form.password2.errors %}
+                                <p class="error">{{ error }}</p>
+                            {% endfor %}
+                        </div>
+
+                    </div>
+
+                    <div class="reg__gender__birth">
+                        <div class="gender">
+                            <label>{{ form.gender.label_tag }}</label>
+                            {{ form.gender }}
+                        </div>
+                        <div class="birthday">
+                            <label>{{ form.date_birthday.label_tag }}</label>
+                            <br>
+                            {{ form.date_birthday }}
+                        </div>
+                    </div>
+
+                    <div class="reg__finish">
+                        <button class="reg__btn" type="submit">Sign Up</button>
+                        <a class="reg__link" href="{% url 'users:sign_in' %}">I have an account</a>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    {% block footer %}
+<!--        Отключенный footer-->
+    {% endblock %}
+
+{% endblock %}
